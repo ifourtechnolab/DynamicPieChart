@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Pie Chart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none" class="selUsers">
+        <ion-label>Select users</ion-label>
+        <ion-select interface="popover" (ionChange)="selectUsers($event)" [(ngModel)]="selectedUserId">
+          <ion-select-option *ngFor="let obj of arrUsers" value="{{obj.id}}">
+            {{obj.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div id="highcharts" style="min-width: 280px; height: 230px; margin: 0 auto"></div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
